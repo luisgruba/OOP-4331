@@ -71,16 +71,10 @@ public class TwoDArray {
 		 */
 		String display = "";
 
-<<<<<<< HEAD
-		for(int i = 0; i < sudoku.length; i++)
-			for(int j = 0; j < sudoku[0].length; j++)
-				display += String.valueOf(sudoku[i][j]) + "\t";
-=======
 		for(int i = 0; i < tiktak.length; i++){
 			for(int j = 0; j < tiktak[0].length; j++){
 				display += String.valueOf(tiktak[i][j]) + "\t";
 			}
->>>>>>> b886d54770dbf406df0e9744f41722a989a29856
 			display += "\n";
 
 		return display;
@@ -99,17 +93,7 @@ public class TwoDArray {
 		 * 
 		 */
 		int count = 0;
-<<<<<<< HEAD
-		Hashtable details = new Hashtable();
-		for(int i = 0; i < sudoku.length; i++){
-			for(int j = 0; j < sudoku[0].length; j++){
-				if(!details.containsKey(sudoku[i][j])){
-					details.put(sudoku[i][j],1);
-					count++;
-				}
-				else
-					details.put(sudoku[i][j], (int)(details.get(sudoku[i][j])) + 1);
-=======
+
 		Hashtable<Integer, Integer> details = new Hashtable<Integer, Integer>();
 		for(int i = 0; i < tiktak.length; i++){
 			for(int j = 0; j < tiktak[0].length; j++){
@@ -119,7 +103,6 @@ public class TwoDArray {
 				}
 				else
 					details.put(tiktak[i][j], details.get(tiktak[i][j]) + 1);
->>>>>>> b886d54770dbf406df0e9744f41722a989a29856
 			}
 		}
 
