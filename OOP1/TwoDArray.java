@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 public class TwoDArray {
-	private int[][] sudoku;
+	private int[][] tiktak;
 	private int r;
 	private int c;
 	private int dv;
@@ -20,7 +20,7 @@ public class TwoDArray {
 		 * the number of rows and columns given. Initialize 
 		 * the array by setting each int to be the defaulVal. 
 		 * */
-		sudoku = new int[rows][cols];
+		tiktak = new int[rows][cols];
 		r = rows;
 		c = cols;
 		dv = defaultVal;
@@ -31,9 +31,9 @@ public class TwoDArray {
 		/*TODO - (Re)Initialize the array by 
 		 * setting each int to be the defaulVal 
 		 */
-		for(int i = 0; i < sudoku.length; i++)
-			for(int j = 0; j < sudoku[0].length; j++)
-				sudoku[i][j] = defaultVal;
+		for(int i = 0; i < tiktak.length; i++)
+			for(int j = 0; j < tiktak[0].length; j++)
+				tiktak[i][j] = defaultVal;
 		
 	}
 	
@@ -48,9 +48,9 @@ public class TwoDArray {
 		if(val == dv)
 			return String.format("Failure: %d is not allowed");
 
-		boolean success = (sudoku[row][col] == dv);
+		boolean success = (tiktak[row][col] == dv);
 
-		sudoku[row][col] = (success) ? val : sudoku[row][col];
+		tiktak[row][col] = (success) ? val : tiktak[row][col];
 
 		return (success) ? String.format("Success! %d was inserted", val) : String.format("Failure: (%d, %d) is not empty", row, col);
 		 
@@ -58,7 +58,7 @@ public class TwoDArray {
 	
 	public int getInt(int row, int col) {
 		/*TODO - Return the value at the specified row, col*/	 
-		return sudoku[row][col];
+		return tiktak[row][col];
 	}
 	
 	public String getArrayDisplay() {
@@ -71,9 +71,16 @@ public class TwoDArray {
 		 */
 		String display = "";
 
+<<<<<<< HEAD
 		for(int i = 0; i < sudoku.length; i++)
 			for(int j = 0; j < sudoku[0].length; j++)
 				display += String.valueOf(sudoku[i][j]) + "\t";
+=======
+		for(int i = 0; i < tiktak.length; i++){
+			for(int j = 0; j < tiktak[0].length; j++){
+				display += String.valueOf(tiktak[i][j]) + "\t";
+			}
+>>>>>>> b886d54770dbf406df0e9744f41722a989a29856
 			display += "\n";
 
 		return display;
@@ -92,6 +99,7 @@ public class TwoDArray {
 		 * 
 		 */
 		int count = 0;
+<<<<<<< HEAD
 		Hashtable details = new Hashtable();
 		for(int i = 0; i < sudoku.length; i++){
 			for(int j = 0; j < sudoku[0].length; j++){
@@ -101,6 +109,17 @@ public class TwoDArray {
 				}
 				else
 					details.put(sudoku[i][j], (int)(details.get(sudoku[i][j])) + 1);
+=======
+		Hashtable<Integer, Integer> details = new Hashtable<Integer, Integer>();
+		for(int i = 0; i < tiktak.length; i++){
+			for(int j = 0; j < tiktak[0].length; j++){
+				if(!details.containsKey(tiktak[i][j])){
+					details.put(tiktak[i][j],1);
+					count++;
+				}
+				else
+					details.put(tiktak[i][j], details.get(tiktak[i][j]) + 1);
+>>>>>>> b886d54770dbf406df0e9744f41722a989a29856
 			}
 		}
 
