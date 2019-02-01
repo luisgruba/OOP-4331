@@ -1,4 +1,4 @@
-//package main.course.oop.tictactoe.util;
+package main.course.oop.tictactoe.util;
 import java.util.*;
 
 /**
@@ -24,7 +24,6 @@ public class TwoDArray {
 		r = rows;
 		c = cols;
 		dv = defaultVal;
-		initArray(defaultVal);
 
 	}
 	
@@ -47,7 +46,7 @@ public class TwoDArray {
 		 /* 3. val is not the default value; 
 		 * 		-return "Failure: (val) is not allowed."*/
 		if(val == dv)
-			return String.format("Failure: %d is not allowed", val);
+			return String.format("Failure: %d is not allowed");
 
 		boolean success = (sudoku[row][col] == dv);
 
@@ -72,12 +71,11 @@ public class TwoDArray {
 		 */
 		String display = "";
 
-		for(int i = 0; i < sudoku.length; i++){
-			for(int j = 0; j < sudoku[0].length; j++){
+		for(int i = 0; i < sudoku.length; i++)
+			for(int j = 0; j < sudoku[0].length; j++)
 				display += String.valueOf(sudoku[i][j]) + "\t";
-			}
 			display += "\n";
-		}
+
 		return display;
 	}
 	
@@ -94,7 +92,7 @@ public class TwoDArray {
 		 * 
 		 */
 		int count = 0;
-		Hashtable<Integer, Integer> details = new Hashtable<Integer, Integer>();
+		Hashtable details = new Hashtable();
 		for(int i = 0; i < sudoku.length; i++){
 			for(int j = 0; j < sudoku[0].length; j++){
 				if(!details.containsKey(sudoku[i][j])){
@@ -102,13 +100,13 @@ public class TwoDArray {
 					count++;
 				}
 				else
-					details.put(sudoku[i][j], details.get(sudoku[i][j]) + 1);
+					details.put(sudoku[i][j], (int)(details.get(sudoku[i][j])) + 1);
 			}
 		}
 
 		String display = "Rows: " + r + "\n";
 		display += "Columns: " + c + "\n";
-		display += "Unique values " + count + "\n";
+		display += "There are " + count + "unique values\n";
 		display += details.toString();
 
 		return display;
