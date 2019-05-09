@@ -76,7 +76,7 @@ public class TwoDArray {
 				display += String.valueOf(tiktak[i][j]) + "\t";
 			}
 			display += "\n";
-
+		}
 		return display;
 	}
 	

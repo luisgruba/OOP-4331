@@ -1,3 +1,4 @@
+package main.course.oop.tictactoe.util;
 public class test{
 	
 	public static void main(String[] args){
